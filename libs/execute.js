@@ -6,10 +6,11 @@ try {
     // test executed commands
     const commands = require('./Pre-process')
 
-    // send valid to Robotech
-    const Robotech = require('./Robotech')(commands)
+    // send valid to wlle
+    const Walle = require('./Walle')(commands)
     const debug = true
-    const rt = new Robotech({}, debug)
+    const wlle = new Walle({}, debug)
+    wlle.walk()
 } catch (err) {
     onerror(err)
 }
