@@ -2,6 +2,7 @@ node_modules
 npm-debug.log
 info.md
 dist
+memory
 # Local development
 
 *.dev

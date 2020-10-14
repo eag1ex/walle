@@ -1,0 +1,83 @@
+
+### Walle
+#### [ Developed by Eaglex ](http://eaglex.net)
+
+  
+##### LICENSE
+* LICENCE: CC BY-NC-ND
+* SOURCE: _(https://creativecommons.org/licenses/by-nc-nd/4.0/)_
+
+  
+#### About
+
+
+
+#### Deadline
+1 days.
+
+
+#### Install
+- To instal run `npm i`
+- Set your node.js and npm to versions specified in `package.json`
+- To run code/lint: `npm run lint:install` then `npm run lint`
+
+
+#### Start
+There are two ways to run this app, _after you installed it_:
+1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
+2. run `node start RW15RW1` etc
+
+
+#### Examples:
+```sh
+# either use `node start` or `walle` (if npm link executed)
+
+$/ walle W5RW5RW2RW1R
+> X: 4 Y: 3 Direction: North
+
+$/ walle RRW11RLLW19RRW12LW1  
+> X: 7 Y: -12 Direction: South
+
+$/ walle LLW100W50RW200W10
+> X: -210 Y: -150 Direction: West
+
+$/ walle LLLLLW99RRRRRW88LLLRL
+> X: -99 Y: 88 Direction: East
+
+$/ walle walle W55555RW555555W444444W1
+> X: 1000000 Y: 55555 Direction: East
+
+```
+
+
+#### Tests & Coverage
+Not in scope of this project, maybe add it later
+
+
+#### Stack
+Application uses own-build externals `x-utils, x-fs`, can be found at (https://bitbucket.org/eag1ex)
+* Full list:  node.js, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
+
+#### Scope
+
+```
+    ./libs >
+        > execute.js
+        > pre-process.js
+            > Schema.js
+                > Walle.js
+        
+```
+
+
+
+#### Config
+./config.js
+
+
+#### Recommended VScode extensions
+- `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
+
+
+##### Contact
+Have questions, or would like to submit feedback, **contact me at:** (https://eaglex.net/app/contact?product=walle)

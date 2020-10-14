@@ -5,14 +5,9 @@
  * 
 */
 const argv = (...args) => {
-    const commands = args.flat().map((n, i) => i > 1 ? n : null).filter(n => !!(n || "").trim())
-
-    if(!commands.length){
-        throw('No commands provided')
-    }
+    const commands = args[0].map((n, i) => i > 1 ? n : null).filter(n => !!(n || "").trim())
+    if (!commands.length) throw ('No commands provided')
     return commands
 }
 
 module.exports = argv(process.argv)
-
-

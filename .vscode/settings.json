@@ -1,6 +1,7 @@
 {
     "cSpell.language": "en",
     "jslint.enable": false,
+    "standard.enable":true,
     "eslint.nodePath":"./node_modules/eslint",
     "eslint.options": { "configFile": "./.eslintrc" },
     "node-module-intellisense.scanBuiltinModules": true,
@@ -17,7 +18,7 @@
       ],
     "eslint.enable": true,
     "eslint.autoFixOnSave":true,
-    "javascript.validate.enable":false,
+    "javascript.validate.enable":true,
     "javascript.format.enable": true,
     "eslint.codeAction.showDocumentation":{
         "enable": true
@@ -41,21 +42,36 @@
                 ".jsbeautifyrc"
             ]
         },
+        "css": [
+            "css",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html"
+        ]
+        // ^^ providing just an array sets the VS Code file type
     },
-    "standard.enable":false,
-    "standard.run":"onSave",
     "standard.options": {
-        "configFile": "./.eslintrc" ,
-        "globals": ["$", "jQuery", "fetch"],
+        "globals": [
+            "$",
+            "jQuery",
+            "fetch"
+        ],
         "ignore": [
             "node_modules/**"
         ],
-        "plugins": ["html"],
+        "plugins": [
+            "html"
+        ],
         "parser": "babel-eslint",
-        "envs": ["jest"],
+        "envs": [
+            "jest"
+        ]
     },
     "standard.validate": [
-        "javascript"
+        "javascript",
+        "html"
     ],
     "peacock.elementAdjustments": {
         "activityBar": "lighten"

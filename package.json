@@ -2,7 +2,12 @@
   "name": "wall-e",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "start.js",
+  "engines": {
+    "node": ">=10.16.0",
+    "npm": ">=6.9.0"
+  },
+  "engineStrict": true,
   "scripts": {
     "lint:install": "npm i babel-eslint eslint eslint-plugin-node eslint-plugin-standard",
     "lint": "./node_modules/.bin/eslint --ext .js libs",
@@ -13,19 +18,16 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "walle": "./cli.js"
+  },
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-standard": "^4.0.1",
+    "x-fs": "git+https://bitbucket.org/eag1ex/xfs.git",
     "x-utils-es": "^1.4.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/polyfill": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
-    "babel-cli": "^6.26.0"
   }
 }

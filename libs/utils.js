@@ -6,7 +6,7 @@
  * @param str:String
  * @returns number or undefined
 */
-exports.numInRange = (start=0, str='') => {
+exports.numInRange = (start = 0, str = '') => {
     let str_position = str.substr(start, str.length)
     let s = ''
     for (let i = 0; i < str_position.length; i++) {
