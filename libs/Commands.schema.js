@@ -48,7 +48,7 @@ const operatorValueSetter = (input='') => {
 function preprocess(rawData = []) {
     let processed = []
     let str = rawData.toString().replace(',', '')
-
+    // TODO add conditional validation
     if (!/[1-9\W\R\L\)]$/.test(str)) {
         onerror('invalid arguments provided, must provide W{}/L{}/R{} with cooresponding data')
         return false
