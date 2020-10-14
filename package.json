@@ -1,7 +1,7 @@
 {
   "name": "wall-e",
   "version": "1.0.0",
-  "description": "",
+  "description": "tell app/robot to move via cli command",
   "main": "start.js",
   "engines": {
     "node": ">=10.16.0",
@@ -22,11 +22,6 @@
     "walle": "./cli.js"
   },
   "dependencies": {
-    "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.11.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^4.0.1",
     "x-fs": "git+https://bitbucket.org/eag1ex/xfs.git",
     "x-utils-es": "^1.4.2"
   }

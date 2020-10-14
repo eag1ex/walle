@@ -9,7 +9,7 @@
 
   
 #### About
-
+Tells app/robot to move via cli commands
 
 
 #### Deadline
@@ -26,6 +26,14 @@
 There are two ways to run this app, _after you installed it_:
 1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
 2. run `node start RW15RW1` etc
+
+
+#### Commands explained:
+`W:integer` walk number of steps
+`L` turns left counterclockwise ( -90 )
+`R` turns rigth clockwise ( +90 )
+- commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
+    * this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
 
 #### Examples:
@@ -58,18 +66,17 @@ Not in scope of this project, maybe add it later
 Application uses own-build externals `x-utils, x-fs`, can be found at (https://bitbucket.org/eag1ex)
 * Full list:  node.js, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
 
+
 #### Scope
 
 ```
     ./libs >
         > execute.js
-        > pre-process.js
-            > Schema.js
-                > Walle.js
+        > pre-process.js (sanatise entries)
+            > Schema.js 
+                > Walle.js (main app)
         
 ```
-
-
 
 #### Config
 ./config.js
