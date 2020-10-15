@@ -2,13 +2,28 @@
 ### Walle
 #### [ Developed by Eaglex ](http://eaglex.net)
 
-  
+
 ##### LICENSE
 * LICENCE: CC BY-NC-ND
 * SOURCE: _(https://creativecommons.org/licenses/by-nc-nd/4.0/)_
 
-  
+
+#### Install
+To instal run `npm i`
+- Set your nodejs and npm to versions specified in `package.json`
+- To run code/lint: `npm run lint:install` then `npm run lint`
+
+
+#### Start
+There are two ways to run this app, _after you installed it_:
+1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
+2. Run `node start RW15RW1` etc
+- Application executes from ./libs/execute.js
+- To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js
+
+
 #### About
+- Learn Walle how to walk with cli commands
 Tells app/robot to move via cli commands
 
 
@@ -16,22 +31,11 @@ Tells app/robot to move via cli commands
 1 days.
 
 
-#### Install
-- To instal run `npm i`
-- Set your node.js and npm to versions specified in `package.json`
-- To run code/lint: `npm run lint:install` then `npm run lint`
-
-
-#### Start
-There are two ways to run this app, _after you installed it_:
-1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
-2. run `node start RW15RW1` etc
-
 
 #### Commands explained:
 `W:integer` walk number of steps
 `L` turns left counterclockwise ( -90 )
-`R` turns rigth clockwise ( +90 )
+`R` turns right clockwise ( +90 )
 - commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
     * this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
@@ -39,6 +43,8 @@ There are two ways to run this app, _after you installed it_:
 #### Examples:
 ```sh
 # either use `node start` or `walle` (if npm link executed)
+
+
 
 $/ walle W5RW5RW2RW1R
 > X: 4 Y: 3 Direction: North
@@ -72,7 +78,7 @@ Application uses own-build externals `x-utils, x-fs`, can be found at (https://b
 ```
     ./libs >
         > execute.js
-        > pre-process.js (sanatise entries)
+        > pre-process.js (sanitize entries)
             > Schema.js 
                 > Walle.js (main app)
         
@@ -86,5 +92,8 @@ Application uses own-build externals `x-utils, x-fs`, can be found at (https://b
 - `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
 
 
-##### Contact
+#### Contact
 Have questions, or would like to submit feedback, **contact me at:** (https://eaglex.net/app/contact?product=walle)
+
+
+#### Thank you

@@ -5,9 +5,13 @@ module.exports = () => {
     return class Helpers {
         constructor(opts = {}, debug) {
             this.debug = debug
-
             this.options = {
+                schema:opts.schema,
                 memory: opts.memory || null
+            }
+
+            if(this.options.schema.constructor.name!=='Schema'){
+                throw('must provide options.schema/Schema for Walle to walk!')
             }
 
             this._commands = []
@@ -19,6 +23,8 @@ module.exports = () => {
             this._state = {} // last state
         }
 
+       
+
         /** 
          * @startPosition
          * - start position translates to `{ name: 'North', value: 0, coordinates: 'y', pos:'+' }`
@@ -27,6 +33,7 @@ module.exports = () => {
             return [{ o: 'L', val: 0, inx: -1 },
                 { o: 'W', val: 0, inx: -1 }]
         }
+
         /** 
         * - increment decrement value
         * @returns number

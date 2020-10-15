@@ -5,7 +5,7 @@
   "main": "start.js",
   "engines": {
     "node": ">=10.16.0",
-    "npm": ">=6.9.0"
+    "npm": ">=6.7.0"
   },
   "engineStrict": true,
   "scripts": {

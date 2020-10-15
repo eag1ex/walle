@@ -1,24 +1,16 @@
-module.exports = (executed) => {
+module.exports = () => {
     const { onerror, isNumber, log, warn, isFalsy, isObject } = require('x-utils-es/umd')
     const config = require('../config')
     const { readFile, writeFile } = require('x-fs')({ dir: config.memoryPath, ext: '.json', silent: true })
-    const { Schema } = require('./Schema')
-
-    // NOTE failed validation, and do not move forward
-    const schema = new Schema(executed) // {commands,errors}
 
     const Helpers = require('./Walle.helpers')()
     return class Walle extends Helpers {
 
         constructor(opts, debug) {
-            super(opts, debug)
-            if (schema.errors.length) {
-                onerror(schema.errors)
-                throw ('schema error')
-            }
-            
+            super(opts, debug)   
+
             /// set commands 
-            this.updateCommands()  
+            this.initCommands()  
          
         }
 
@@ -28,17 +20,17 @@ module.exports = (executed) => {
          * - if memory/state was set update current state
          * - do not set initial state if memory was enabled
         */
-        updateCommands() {
+        initCommands() {
             if (this.options.memory) {
                 if (this.debug) log('walle memory/state is enabled')
                 let availState = readFile('walle_state') || {}
                 if (!isFalsy(availState)) {
-                    this.commands = schema.commands
+                    this.commands = this.schema.commands
                     this.updateSate(availState)
                       
-                } else this.commands = [].concat(this.startPosition, schema.commands || [])
+                } else this.commands = [].concat(this.startPosition, this.schema.commands || [])
             } else {
-                this.commands = [].concat(this.startPosition, schema.commands || [])
+                this.commands = [].concat(this.startPosition, this.schema.commands || [])
             }
         }
 
@@ -52,28 +44,32 @@ module.exports = (executed) => {
             }   
         }
 
-        set commands(v) {
-            this._commands = v
-        }
-        /** 
-        * @commands
-        * example: schema.commands >>
-        [  { o: 'R', val: 90, inx: 1 }, // RIGHT
-           { o: 'L', val: -90, inx: 10 } // LEFT
-           { o: 'W', val: 5, inx: 2 }, // moving
-            ]
-           @returns []
-       */
-        get commands() {
-            return this._commands
-        }
 
+        /** 
+         * @output
+         * - get latest walking output
+        */
         output() {
             return {
                 X: this.state.x,
                 Y: this.state.y,
                 Direction: this.state.direction.name
             }
+        }
+
+        print() {
+            let o = this.output()
+            return `X: ${o.X} Y: ${o.Y} Direction: ${o.Direction}`
+        }
+
+
+        /** 
+        * - operational data for walle, 
+        * - source file `Schema.js`
+        * @returns {commands, operators}
+       */
+        get schema() {
+            return this.options.schema
         }
 
         /**
@@ -87,17 +83,30 @@ module.exports = (executed) => {
             return this._state
         }
 
-        print() {
-            let o = this.output()
-            return `X: ${o.X} Y: ${o.Y} Direction: ${o.Direction}`
+        set commands(v) {
+            this._commands = v
+        }
+        /** 
+        * @commands
+        * example: this.schema.commands >>
+        [  { o: 'R', val: 90, inx: 1 }, // RIGHT
+           { o: 'L', val: -90, inx: 10 } // LEFT
+           { o: 'W', val: 5, inx: 2 }, // moving
+            ]
+           @returns []
+       */
+        get commands() {
+            return this._commands
         }
 
+      
         /** 
          * @walk
          * wall-e walks :)
-         * - loop thru 
+         * - loop thru each command
         */
         walk() {
+            if(this.debug) log('Walle starting to walk...')
             this.commands.forEach(({ o, val, inx }, i) => {
                
                 // direction
@@ -145,9 +154,7 @@ module.exports = (executed) => {
             }
             return d
         }
-        memory() {
-            return this.mem
-        }
+
     }
 
 }   

@@ -2,14 +2,22 @@
 const { onerror } = require('x-utils-es/umd')
 try {
 
+    /** 
+     * process of execution:
+     * 1. process cli commands
+     * 2. validate and create schema
+     * 3. initiate Walle with new schema
+    */
+
     // test executed commands
     const commands = require('./pre-process')
-
-    // send valid to wlle
+    const schema = require('./Schema')(commands)
+    // send valid to walle
     const Walle = require('./Walle')(commands)
     const debug = true
     const opts = {
-        memory: false // previous commands are written to file as cache
+        schema, // commands for Walle to walk
+        memory: false // memory/state, writes last cli command>state to file
     }
     const wlle = new Walle(opts, debug)
 
