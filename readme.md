@@ -19,7 +19,7 @@ There are two ways to run this app, _after you installed it_:
 1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
 2. Run `node start RW15RW1` etc
 - Application executes from ./libs/execute.js
-- To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js
+- To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js, this will add another dir called `./memory/walle_state.json`
 
 
 #### About

@@ -17,7 +17,7 @@ try {
     const debug = true
     const opts = {
         schema, // commands for Walle to walk
-        memory: false // memory/state, writes last cli command>state to file
+        memory: false // memory/state, writes last cli command>state to ./memory/walle_state.json
     }
     const wlle = new Walle(opts, debug)
 
