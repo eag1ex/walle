@@ -44,7 +44,7 @@ There are two ways to run this app, _after you installed it_:
 - `L` turns left counterclockwise ( -90 )
 - `R` turns right clockwise ( +90 )
 
-* commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
+* commands can be combined to a string without spaces to form navigation execution, example : `LW5RLW2`
 	- this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
 
