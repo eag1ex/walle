@@ -31,6 +31,7 @@ module.exports = (rawInput) => {
                 let integ = numInRange(i + 1, input)
                 if (!isNaN(integ)) oValues.push({ o: 'W', val: integ, inx: i })
                 else {
+                    // NOTE soft error, will still pass when not set to {strict} with default start position
                     oValues.push({ error: `invalid W{integer} provided, setting default {W0} at index:${i}` })
                     oValues.push({ o: 'W', val: 0 })
                 }
