@@ -1,17 +1,25 @@
 
 module.exports = () => {
-    const { isNumber } = require('x-utils-es/umd')
+    const { isNumber, onerror } = require('x-utils-es/umd')
 
     return class Helpers {
         constructor(opts = {}, debug) {
             this.debug = debug
             this.options = {
                 schema:opts.schema,
-                memory: opts.memory || null
+                memory: opts.memory || null,
+                strict:opts.strict || false // NOTE  do nto allow any errors thru to Walle
             }
 
             if(this.options.schema.constructor.name!=='Schema'){
                 throw('must provide options.schema/Schema for Walle to walk!')
+            }
+
+            if(this.options.strict){
+                if((this.options.schema.errors ||[]).length){
+                    this.options.schema.errors.forEach(error =>onerror(error));              
+                    throw('Schema detected errors')
+                }
             }
 
             this._commands = []

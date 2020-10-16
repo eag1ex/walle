@@ -68,17 +68,16 @@ module.exports = (rawInput) => {
         this.processed = []
         this.init = (rawData) => {
             let pre = preprocess(rawData) || []
-            this.errors = pre.filter(n => n.error)
+            this.errors = pre.filter(n => n.error).map(n=>n.error)
             // validate schema operators
             pre = pre.map(el => {
-                let { o, val } = el
-                if (operators[o].prototype === (val).__proto__) return el
-                else {
+                let { o, val } = el               
+                if(val!==undefined){
+                    if (operators[o].prototype === (val).__proto__) return el
+                } else {
                     this.errors.push(`o: [${o}]=${val} is not a valid operator`)
                 }
             }).filter(n => !!n)
-
-
             // filter out errors
             this.processed = pre.filter(n => n.error === undefined && !!n)
         }

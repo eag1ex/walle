@@ -10,8 +10,7 @@ module.exports = () => {
             super(opts, debug)   
 
             /// set commands 
-            this.initCommands()  
-         
+            this.initCommands()
         }
 
         /** 
@@ -26,7 +25,7 @@ module.exports = () => {
                 let availState = readFile('walle_state') || {}
                 if (!isFalsy(availState)) {
                     this.commands = this.schema.commands
-                    this.updateSate(availState)
+                    this.updateState(availState)
                       
                 } else this.commands = [].concat(this.startPosition, this.schema.commands || [])
             } else {
@@ -34,7 +33,7 @@ module.exports = () => {
             }
         }
 
-        updateSate(availState = {}) {
+        updateState(availState = {}) {
             if (isNumber(availState.x) && isNumber(availState.y) && isObject(availState.direction)) {
                 this.x = availState.x
                 this.y = availState.y
