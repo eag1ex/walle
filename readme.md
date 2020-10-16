@@ -23,7 +23,7 @@ There are two ways to run this app, _after you installed it_:
 
 
 #### About
-- Learn Walle how to walk with cli commands
+- Teach Walle how to walk with cli commands
 Tells app/robot to move via cli commands
   
 
@@ -36,8 +36,8 @@ Tells app/robot to move via cli commands
 `L` turns left counterclockwise ( -90 )
 `R` turns right clockwise ( +90 )
 
-- commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
-* this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
+* commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
+	- this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
 
 #### Examples:
@@ -67,8 +67,8 @@ Not in scope of this project, maybe add it later
   
 
 #### Stack
-Application uses own-build externals `x-utils, x-fs`, can be found at (https://bitbucket.org/eag1ex)
-* Full list: node.js, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
+Application uses own-build externals `x-utils, x-fs`, found at (https://bitbucket.org/eag1ex) and (https://www.npmjs.com/~anon101)
+* Full list: NodeJS, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
 
 
 #### Scope
