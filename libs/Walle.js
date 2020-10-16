@@ -1,5 +1,5 @@
 module.exports = () => {
-    const { onerror, isNumber, log, warn, isFalsy, isObject } = require('x-utils-es/umd')
+    const { isNumber, log, warn, isFalsy, isObject } = require('x-utils-es/umd')
     const config = require('../config')
     const { readFile, writeFile } = require('x-fs')({ dir: config.memoryPath, ext: '.json', silent: true })
 
