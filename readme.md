@@ -1,5 +1,5 @@
 
-### Walle
+#### Walle
 #### [ Developed by Eaglex ](http://eaglex.net)
 
 
@@ -16,7 +16,7 @@ To instal run `npm i`
 
 #### Start
 There are two ways to run this app, _after you installed it_:
-1. Run `npm link`, and you got access to  `/$ walle RW15RW1` etc
+1. Run `npm link`, and you got access to `/$ walle RW15RW1` etc
 2. Run `node start RW15RW1` etc
 - Application executes from ./libs/execute.js
 - To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js, this will add another dir called `./memory/walle_state.json`
@@ -25,31 +25,29 @@ There are two ways to run this app, _after you installed it_:
 #### About
 - Learn Walle how to walk with cli commands
 Tells app/robot to move via cli commands
-
+  
 
 #### Deadline
 1 days.
-
 
 
 #### Commands explained:
 `W:integer` walk number of steps
 `L` turns left counterclockwise ( -90 )
 `R` turns right clockwise ( +90 )
+
 - commands can be combined to a string without spaces to form navigation execution, example : `LW5RLM2`
-    * this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
+* this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
 
 #### Examples:
 ```sh
 # either use `node start` or `walle` (if npm link executed)
 
-
-
 $/ walle W5RW5RW2RW1R
 > X: 4 Y: 3 Direction: North
 
-$/ walle RRW11RLLW19RRW12LW1  
+$/ walle RRW11RLLW19RRW12LW1
 > X: 7 Y: -12 Direction: South
 
 $/ walle LLW100W50RW200W10
@@ -66,30 +64,29 @@ $/ walle walle W55555RW555555W444444W1
 
 #### Tests & Coverage
 Not in scope of this project, maybe add it later
-
+  
 
 #### Stack
 Application uses own-build externals `x-utils, x-fs`, can be found at (https://bitbucket.org/eag1ex)
-* Full list:  node.js, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
+* Full list: node.js, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
 
 
 #### Scope
-
 ```
-    ./libs >
-        > execute.js
-        > pre-process.js (sanitize entries)
-            > Schema.js 
-                > Walle.js (main app)
-        
+./libs >
+> execute.js
+	> pre-process.js (sanitize entries)
+		> Schema.js
+		> Walle.js (main app)
 ```
 
+ 
 #### Config
 ./config.js
 
 
 #### Recommended VScode extensions
-- `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
+-  `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
 
 
 #### Contact
