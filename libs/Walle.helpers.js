@@ -78,8 +78,7 @@ module.exports = () => {
             }
 
             if (v === 90) {
-                this._directionNum += v
-                
+                this._directionNum += v            
             }
         }
 

@@ -85,6 +85,7 @@ module.exports = () => {
         set commands(v) {
             this._commands = v
         }
+
         /** 
         * @commands
         * example: this.schema.commands >>
@@ -153,7 +154,5 @@ module.exports = () => {
             }
             return d
         }
-
     }
-
 }   

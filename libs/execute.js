@@ -12,7 +12,7 @@ try {
     // test executed commands
     const commands = require('./pre-process')
     const schema = require('./Schema')(commands)
-    
+
     // send valid to walle
     const Walle = require('./Walle')(commands)
     const debug = true
