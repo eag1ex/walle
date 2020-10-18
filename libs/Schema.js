@@ -54,7 +54,7 @@ module.exports = (rawInput) => {
     */
     function preprocess(rawData = []) {
 
-        let input = rawData.toString().replace(',', '')
+        let input = rawData.toString().replace(/,/g,'')
         input = input.toUpperCase()
 
         if (!/[0-9W\R\L)]$/.test(input)) {
