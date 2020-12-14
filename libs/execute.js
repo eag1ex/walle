@@ -19,7 +19,7 @@ try {
     const opts = {
         strict: false, // when set will not allow any erros from schema to pass
         schema, // commands for Walle to walk
-        memory: false // memory/state, writes last cli command>state to ./memory/walle_state.json
+        memory: true // memory/state, writes last cli command>state to ./memory/walle_state.json
     }
     const wlle = new Walle(opts, debug)
 

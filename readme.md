@@ -51,7 +51,7 @@ There are two ways to run this app, _after you installed it_:
 #### Examples:
 
 ```sh
-# either use `node start` or `walle` (if npm link executed)
+# either use `node start {directions}` or `walle {directions}` (if `npm link` executed)
 
 $/ walle W5RW5RW2RW1R
 > X: 4 Y: 3 Direction: North
