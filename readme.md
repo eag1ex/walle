@@ -1,20 +1,19 @@
-
 #### Walle
+
 #### [ Developed by Eaglex ](http://eaglex.net)
 
+#### About
 
-##### LICENSE
+- Teach Walle how to walk using cli commands
+- Tells app/robot to move via cli commands
 
-* LICENCE: CC BY-NC-ND
-* SOURCE: _(https://creativecommons.org/licenses/by-nc-nd/4.0/)_
-
+<img src="./screens/walle-1.png"  width="400"/>
 
 #### Install
 
 - `npm i` or `npm link`
 - Set your minimum nodejs and npm to versions specified in `package.json`
 - To run code/lint: `npm run lint:install` then `npm run lint`
-
 
 #### Start
 
@@ -23,20 +22,12 @@ There are two ways to run this app, _after you installed it_:
 1. `/$ walle RW15RW1` if you first run `npm link`
 2. example: `/$ node start RW15RW1`
 
-* Application executes from ./libs/execute.js
-* To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js, this will add another dir called `./memory/walle_state.json`
-
-
-#### About
-
-- Teach Walle how to walk with cli commands
-- Tells app/robot to move via cli commands
-  
+- Application executes from ./libs/execute.js
+- To enable memory state from previous cli execution, set `{memory:true}` in ./libs/execute.js, this will add another dir called `./memory/walle_state.json`
 
 #### Deadline
 
 1 days.
-
 
 #### Commands explained:
 
@@ -45,8 +36,7 @@ There are two ways to run this app, _after you installed it_:
 - `R` turns right clockwise ( +90 )
 
 * commands can be combined to a string without spaces to form navigation execution, example : `LW5RLW2`
-	- this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
-
+  - this executes: turn left, walk 5 points, turn right, turn left again and walk 2 points
 
 #### Examples:
 
@@ -70,17 +60,15 @@ $/ walle walle W55555RW555555W444444W1
 
 ```
 
-
 #### Tests & Coverage
+
 Not in scope of this project, maybe add it later
-  
 
 #### Stack
 
 Application uses own-build externals `x-utils, x-fs`, found at (https://bitbucket.org/eag1ex) and (https://www.npmjs.com/~anon101)
 
-* Full list: NodeJS, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
-
+- Full list: NodeJS, JavaScrit, es6, memory/state, cli/process.argv, npm, lint
 
 #### Scope
 
@@ -92,19 +80,21 @@ Application uses own-build externals `x-utils, x-fs`, found at (https://bitbucke
 		> Walle.js (main app)
 ```
 
- 
 #### Config
-./config.js
 
+./config.js
 
 #### Recommended VScode extensions
 
--  `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
-
+- `vscode-language-babe, vscode-babel-coloring, comment-anchors, joelday.docthis, vscode-standardjs`
 
 #### Contact
 
 Have questions, or would like to submit feedback, **contact me at:** (https://eaglex.net/app/contact?product=walle)
 
+##### LICENSE
+
+- LICENSE: CC BY-NC-ND
+- SOURCE: _(https://creativecommons.org/licenses/by-nc-nd/4.0/)_
 
 #### Thank you
