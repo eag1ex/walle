@@ -45,8 +45,6 @@ journal
 *.tar
 *.xap
 *.zip
-*.jpg
-*.png
 *.tif
 
 !.npmignore
