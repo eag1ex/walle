@@ -7,7 +7,7 @@
 - Teach Walle how to walk using cli commands
 - Tells app/robot to move via cli commands
 
-<img src="./screens/walle-1.png"  width="400"/>
+<img src="./screens/walle-1.png"  width="500"/>
 
 #### Install
 
