@@ -4,8 +4,7 @@
   "description": "tell app/robot to move via cli command",
   "main": "start.js",
   "engines": {
-    "node": ">=10.16.0",
-    "npm": ">=6.7.0"
+    "node": ">=16"
   },
   "engineStrict": true,
   "scripts": {
