@@ -11,6 +11,7 @@
 
 #### Install
 
+- Set to **Node v16** if your current doesnt work
 - `npm i` or `npm link`
 - Set your minimum nodejs and npm to versions specified in `package.json`
 - To run code/lint: `npm run lint:install` then `npm run lint`
